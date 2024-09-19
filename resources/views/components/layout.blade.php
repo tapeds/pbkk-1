@@ -1,13 +1,18 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="h-full bg-gray-100">
 
-<x-header>{{ $title }}</x-header>
+<x-head>{{ $title }}</x-head>
 
-<body>
+<body class="h-full">
     <x-navbar></x-navbar>
-    <div class="antialiased min-h-screen bg-slate-100 flex justify-center items-center flex-col">
+
+    <x-header>Home Page</x-header>
+
+    <main>
+        <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
         {{ $slot }}
-    </div>
+        </div>
+    </main>
 </body>
 
 </html>
