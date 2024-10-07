@@ -13,6 +13,8 @@ class Post extends Model
 
     protected $fillable = ['title', 'author', 'category_id', 'slug', 'body'];
 
+    protected $with = ['author', 'category'];
+
     public function author(): BelongsTo
     {
         return $this->belongsTo(User::class);
@@ -20,6 +22,6 @@ class Post extends Model
 
     public function category(): BelongsTo
     {
-        return $this->belongsTo(Category::class)
+        return $this->belongsTo(Category::class);
     }
 }
